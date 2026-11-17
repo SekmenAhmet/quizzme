@@ -1,0 +1,5 @@
+services: 
+  web: 
+    build: ./quizzme-backend
+    ports: 
+      - '8000:8000'
