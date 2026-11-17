@@ -3,12 +3,16 @@ services:
     build: ./quizzme-backend
     ports: 
       - '8000:8000'
-
+    volumes:
+      - sqlite_data:/data
+    restart: unless-stopped
   frontend:
     build: ./quizzme-frontend
     ports:
       - '3000:3000'
     depends_on:
       - backend
+    restart: unless-stopped
 
-    
+volumes:
+  sqlite_data:
